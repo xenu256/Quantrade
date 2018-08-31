@@ -323,27 +323,27 @@ async def image_to_db(path_to, s):
 
         f = "{0}=={1}=={2}=={3}=={4}.png".format(s.broker.slug, s.symbol.symbol, s.period.period, s.system.title, dir_slug)
         if isfile(join(path_to, 'meta', f)):
-            filename = "https://quantrade.co.uk/{0}meta/{1}".format(partial_path, f)
+            filename = "https://quantrade.talaikis.com/{0}meta/{1}".format(partial_path, f)
             s.img = filename
             if settings.SHOW_DEBUG:
                 print(colored.green("Wrote images urls to db for {}".format(filename)))
         if isfile(join(path_to, 'heatmap', f)):
-            filename = "https://quantrade.co.uk/{0}heatmap/{1}".format(partial_path, f)
+            filename = "https://quantrade.talaikis.com/{0}heatmap/{1}".format(partial_path, f)
             s.heatmap = filename
             if settings.SHOW_DEBUG:
                 print(colored.green("Wrote images urls to db for {}".format(filename)))
         if isfile(join(path_to, 'yearly', f)):
-            filename = "https://quantrade.co.uk/{0}yearly/{1}".format(partial_path, f)
+            filename = "https://quantrade.talaikis.com/{0}yearly/{1}".format(partial_path, f)
             s.yearly_ret = filename
             if settings.SHOW_DEBUG:
                 print(colored.green("Wrote images urls to db for {}".format(filename)))
         if isfile(join(path_to, 'mc', f)):
-            filename = "https://quantrade.co.uk/{0}mc/{1}".format(partial_path, f)
+            filename = "https://quantrade.talaikis.com/{0}mc/{1}".format(partial_path, f)
             s.mc = filename
             if settings.SHOW_DEBUG:
                 print(colored.green("Wrote images urls to db for {}".format(filename)))
 
-        strategy_url = "https://quantrade.co.uk/{0}/{1}/{2}/{3}/{4}/".format(s.broker.slug, s.symbol.symbol, s.period.period, s.system.title, dir_slug)
+        strategy_url = "https://quantrade.talaikis.com/{0}/{1}/{2}/{3}/{4}/".format(s.broker.slug, s.symbol.symbol, s.period.period, s.system.title, dir_slug)
         s.strategy_url = strategy_url
 
         s.save()
